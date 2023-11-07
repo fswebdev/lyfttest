@@ -10,10 +10,7 @@ class BatteryTest(unittest.TestCase):
         battery = Battery()
         with self.assertRaises(NotImplementedError):
             battery.needs_service()
-"""
-import unittest
-from battery.battery import Battery
-"""
+
 
 class NubbinBatteryTest(unittest.TestCase):
     def test_needs_service_returns_true_when_last_service_date_is_more_than_4_years_ago(self):
@@ -30,12 +27,6 @@ class NubbinBatteryTest(unittest.TestCase):
 
         self.assertFalse(battery.needs_service())
 
-"""
-import unittest
-from battery.battery import Battery
-from utils import add_years_to_date
-"""
-
 class SpindlerBatteryTest(unittest.TestCase):
     def test_needs_service_returns_true_when_last_service_date_is_more_than_2_years_ago(self):
         current_date = datetime.datetime(2023, 11, 7)
@@ -50,10 +41,6 @@ class SpindlerBatteryTest(unittest.TestCase):
         battery = SpindlerBattery(current_date, last_service_date)
 
         self.assertFalse(battery.needs_service())
-
-"""
-import unittest
-"""
 
 class EngineTest(unittest.TestCase):
     def test_needs_service_abstract_method(self):
