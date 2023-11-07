@@ -4,7 +4,9 @@ from battery.nubbin_battery import NubbinBattery
 from battery.spindler_battery import SpindlerBattery
 from utils import add_years_to_date
 from engine.engine import Engine
-
+"""
+BatteryTest
+"""
 class BatteryTest(unittest.TestCase):
     def test_needs_service_abstract_method(self):
         battery = Battery()
@@ -42,6 +44,9 @@ class SpindlerBatteryTest(unittest.TestCase):
 
         self.assertFalse(battery.needs_service())
 
+"""
+EngineTest
+"""
 class EngineTest(unittest.TestCase):
     def test_needs_service_abstract_method(self):
         engine = Engine()
